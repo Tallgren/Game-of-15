@@ -5,8 +5,10 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class graphicFeatures extends JFrame {
+
+    logicFeatures lf = new logicFeatures();
     JPanel headPanel = new JPanel();
-    JPanel gamePanel = buttonPanel();
+    JPanel gamePanel = buttonPanel(lf.buttonList());
     JButton newGame = new JButton("Nytt Spel");
     JButton demo = new JButton("Demo");
     graphicFeatures() {

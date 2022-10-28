@@ -13,7 +13,6 @@ public class logicFeatures extends JFrame {
             b.setText(String.valueOf(i)); //may need adjustments
             buttonList.add(b);
         }
-        buttonList.add(new JButton(""));
         return buttonList;
     }
 
