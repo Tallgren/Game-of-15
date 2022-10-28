@@ -1,8 +1,8 @@
 package FifteenGame;
 
-public class Main {
+public class FifteenGame {
 
-    
+
 
     public static void main(String[] args) {
     }
