@@ -2,6 +2,7 @@ package FifteenGame;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class logicFeatures extends JFrame {
 
@@ -12,7 +13,10 @@ public class logicFeatures extends JFrame {
             b.setText(String.valueOf(i)); //may need adjustments
             buttonList.add(b);
         }
-        buttonList.add(new JButton(""));
         return buttonList;
+    }
+
+    public void scrambledButtonList(ArrayList<JButton> buttonList) {
+        Collections.shuffle(buttonList);
     }
 }
