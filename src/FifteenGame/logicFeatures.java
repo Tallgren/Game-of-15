@@ -13,7 +13,13 @@ public class logicFeatures extends JFrame {
             b.setText(String.valueOf(i)); //may need adjustments
             buttonList.add(b);
         }
+        buttonList.add(new JButton(""));
         return buttonList;
+    }
+
+    public void demoList(ArrayList<JButton> buttonList) {
+        buttonList.get(15).setText("");
+        buttonList.get(16).setText("15");
     }
 
     public void scrambledButtonList(ArrayList<JButton> buttonList) {

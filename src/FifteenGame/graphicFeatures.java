@@ -23,14 +23,13 @@ public class graphicFeatures extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    public JPanel buttonPanel(){
-        logicFeatures lf = new logicFeatures();
-        ArrayList <JButton> buttonList = lf.buttonList();
+    public JPanel buttonPanel(ArrayList<JButton> listToBeAdded){
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(4, 4));
-        for (JButton element: buttonList) {
+        for (JButton element: listToBeAdded) {
             buttonPanel.add(element);
         }
+        buttonPanel.add(new JButton(""));
         return buttonPanel;
     }
 }
