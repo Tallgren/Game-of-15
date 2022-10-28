@@ -13,7 +13,6 @@ public class logicFeatures extends JFrame {
             b.setText(String.valueOf(i)); //may need adjustments
             buttonList.add(b);
         }
-        buttonList.add(new JButton(""));
         return buttonList;
     }
 
@@ -24,5 +23,19 @@ public class logicFeatures extends JFrame {
 
     public void scrambledButtonList(ArrayList<JButton> buttonList) {
         Collections.shuffle(buttonList);
+    }
+
+    public boolean isWin(ArrayList<JButton> orderOfButtons) {
+        int controller = 1;
+        for (JButton element : orderOfButtons) {
+            if (controller == Integer.parseInt(element.getText())) {
+                controller++;
+            }
+        }
+        if (controller == 15) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
