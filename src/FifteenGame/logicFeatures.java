@@ -7,11 +7,12 @@ public class logicFeatures extends JFrame {
 
     public ArrayList<JButton> buttonList() {
         ArrayList<JButton> buttonList = new ArrayList<>();
-        for (int i = 0; i < 16; i++) {
+        for (int i = 1; i < 16; i++) {
             JButton b = new JButton();
             b.setText(String.valueOf(i)); //may need adjustments
             buttonList.add(b);
         }
+        buttonList.add(new JButton(""));
         return buttonList;
     }
 }
