@@ -15,4 +15,9 @@ public class logicFeatures extends JFrame {
         buttonList.add(new JButton(""));
         return buttonList;
     }
+
+    public void demoList(ArrayList<JButton> buttonList) {
+        buttonList.get(15).setText("");
+        buttonList.get(16).setText("15");
+    }
 }
