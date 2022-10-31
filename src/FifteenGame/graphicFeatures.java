@@ -2,9 +2,11 @@ package FifteenGame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class graphicFeatures extends JFrame {
+public class graphicFeatures extends JFrame implements ActionListener {
 
     logicFeatures lf = new logicFeatures();
     JPanel headPanel = new JPanel();
@@ -18,11 +20,24 @@ public class graphicFeatures extends JFrame {
 
         headPanel.add(newGame);
         headPanel.add(demo);
+        newGame.addActionListener(this);
 
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == newGame) {
+            ArrayList<JButton> buttonList = lf.buttonList();
+            lf.scrambledButtonList(buttonList);
+            for (JButton element : buttonList) {
+                JButton b = (JButton) gamePanel.getComponent(buttonList.indexOf(element));
+                b.setText(element.getText());
+            }
+        }
     }
 
     public JPanel buttonPanel(ArrayList<JButton> listToBeAdded){
