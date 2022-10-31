@@ -4,7 +4,9 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class logicFeatures extends JFrame {
+public class LogicFeatures extends JFrame {
+
+    GraphicFeatures gf = new GraphicFeatures();
 
     public ArrayList<JButton> buttonList() {
         ArrayList<JButton> buttonList = new ArrayList<>();
@@ -23,6 +25,19 @@ public class logicFeatures extends JFrame {
 
     public void scrambledButtonList(ArrayList<JButton> buttonList) {
         Collections.shuffle(buttonList);
+    }
+
+    public void moveButton(ArrayList <JButton> currentOrderOfButtons, JButton button){
+        int buttonIndex = currentOrderOfButtons.indexOf(button);
+        int row = buttonIndex / 4;
+        int column = buttonIndex % 4;
+        int emptyIndex = currentOrderOfButtons.indexOf("");
+        if (emptyIndex == row -1 || emptyIndex == row +1 || emptyIndex == column -1 || emptyIndex == column +1){
+            Collections.swap(currentOrderOfButtons, buttonIndex, emptyIndex);
+        }
+        if (isWin(currentOrderOfButtons)){
+            gf.headPanel.add(gf.winnerLabel);
+        }
     }
 
     public boolean isWin(ArrayList<JButton> orderOfButtons) {

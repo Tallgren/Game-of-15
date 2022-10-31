@@ -6,14 +6,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class graphicFeatures extends JFrame implements ActionListener {
-
-    logicFeatures lf = new logicFeatures();
+public class GraphicFeatures extends JFrame implements ActionListener {
+    LogicFeatures lf = new LogicFeatures();
     JPanel headPanel = new JPanel();
+    JLabel winnerLabel = new JLabel("Grattis, du VANN!!!");
     JPanel gamePanel = buttonPanel(lf.buttonList());
+    ArrayList<JButton> currentOrderOfButtons = lf.buttonList();
     JButton newGame = new JButton("Nytt Spel");
     JButton demo = new JButton("Demo");
-    graphicFeatures() {
+    GraphicFeatures() {
         setLayout(new BorderLayout());
         add(headPanel, BorderLayout.NORTH);
         add(gamePanel, BorderLayout.SOUTH);
@@ -28,17 +29,6 @@ public class graphicFeatures extends JFrame implements ActionListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == newGame) {
-            ArrayList<JButton> buttonList = lf.buttonList();
-            lf.scrambledButtonList(buttonList);
-            for (JButton element : buttonList) {
-                JButton b = (JButton) gamePanel.getComponent(buttonList.indexOf(element));
-                b.setText(element.getText());
-            }
-        }
-    }
 
     public JPanel buttonPanel(ArrayList<JButton> listToBeAdded){
         JPanel buttonPanel = new JPanel();
@@ -48,5 +38,19 @@ public class graphicFeatures extends JFrame implements ActionListener {
         }
         buttonPanel.add(new JButton(""));
         return buttonPanel;
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        lf.moveButton(currentOrderOfButtons, (JButton) e.getSource());
+
+        if (e.getSource() == newGame) {
+            ArrayList<JButton> buttonList = lf.buttonList();
+            lf.scrambledButtonList(buttonList);
+            currentOrderOfButtons = buttonList;
+            for (JButton element : buttonList) {
+                JButton b = (JButton) gamePanel.getComponent(buttonList.indexOf(element));
+                b.setText(element.getText());
+            }
+        }
     }
 }
