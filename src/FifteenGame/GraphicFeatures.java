@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class GraphicFeatures extends JFrame implements ActionListener {
     LogicFeatures lf = new LogicFeatures();
+
     JPanel headPanel = new JPanel();
     JLabel winnerLabel = new JLabel("Grattis, du VANN!!!");
     JPanel gamePanel = buttonPanel(lf.buttonList());
@@ -41,7 +42,7 @@ public class GraphicFeatures extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        lf.moveButton(currentOrderOfButtons, (JButton) e.getSource());
+        //lf.moveButton(currentOrderOfButtons, (JButton) e.getSource());
 
         if (e.getSource() == newGame) {
             ArrayList<JButton> buttonList = lf.buttonList();

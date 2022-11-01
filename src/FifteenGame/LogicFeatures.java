@@ -6,8 +6,6 @@ import java.util.Collections;
 
 public class LogicFeatures extends JFrame {
 
-    GraphicFeatures gf = new GraphicFeatures();
-
     public ArrayList<JButton> buttonList() {
         ArrayList<JButton> buttonList = new ArrayList<>();
         for (int i = 1; i < 16; i++) {
@@ -27,7 +25,7 @@ public class LogicFeatures extends JFrame {
         Collections.shuffle(buttonList);
     }
 
-    public void moveButton(ArrayList <JButton> currentOrderOfButtons, JButton button){
+    public ArrayList <JButton> moveButton(ArrayList <JButton> currentOrderOfButtons, JButton button){
         int buttonIndex = currentOrderOfButtons.indexOf(button);
         int row = buttonIndex / 4;
         int column = buttonIndex % 4;
@@ -35,9 +33,12 @@ public class LogicFeatures extends JFrame {
         if (emptyIndex == row -1 || emptyIndex == row +1 || emptyIndex == column -1 || emptyIndex == column +1){
             Collections.swap(currentOrderOfButtons, buttonIndex, emptyIndex);
         }
+        return currentOrderOfButtons;
+        /*
         if (isWin(currentOrderOfButtons)){
             gf.headPanel.add(gf.winnerLabel);
         }
+        */
     }
 
     public boolean isWin(ArrayList<JButton> orderOfButtons) {
