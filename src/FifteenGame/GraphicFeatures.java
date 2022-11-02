@@ -5,25 +5,25 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class GraphicFeatures extends JFrame implements ActionListener {
 
     LogicFeatures lf = new LogicFeatures();
     MoveButton mb = new MoveButton();
     JPanel headPanel = new JPanel();
-    JPanel buttonPanel = new JPanel();
+    JPanel panelForButtons = new JPanel();
 
     JLabel winnerLabel = new JLabel("Grattis, du VANN!!!");
     ArrayList<JButton> currentOrderOfButtons = lf.buttonList();
-    JPanel gamePanel = buttonPanel(buttonPanel, currentOrderOfButtons);
+    JPanel gamePanel = buttonPanel(panelForButtons, currentOrderOfButtons);
     JButton newGame = new JButton("Nytt Spel");
     JButton demo = new JButton("Demo");
+
     GraphicFeatures() {
         setLayout(new BorderLayout());
         add(headPanel, BorderLayout.NORTH);
         add(gamePanel, BorderLayout.SOUTH);
-        buttonPanel.setLayout(new GridLayout(4, 4));
+        panelForButtons.setLayout(new GridLayout(4, 4));
 
         headPanel.add(newGame);
         headPanel.add(demo);
@@ -35,7 +35,10 @@ public class GraphicFeatures extends JFrame implements ActionListener {
                 b.setText(element.getText());
             }
         });
-
+        demo.addActionListener(el ->{
+            ArrayList <JButton> buttonListDemo = lf.demoList(lf.buttonList());
+            gamePanel = buttonPanel(panelForButtons, buttonListDemo);
+        });
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
