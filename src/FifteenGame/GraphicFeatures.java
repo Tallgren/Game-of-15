@@ -35,9 +35,13 @@ public class GraphicFeatures extends JFrame implements ActionListener {
                 b.setText(element.getText());
             }
         });
-        demo.addActionListener(el ->{
-            ArrayList <JButton> buttonListDemo = lf.demoList(lf.buttonList());
-            gamePanel = buttonPanel(panelForButtons, buttonListDemo);
+        demo.addActionListener(l -> {
+            ArrayList<JButton> buttonList = lf.buttonList();
+            lf.demoList(buttonList);
+            for (JButton element : buttonList) {
+                JButton b = (JButton) gamePanel.getComponent(buttonList.indexOf(element));
+                b.setText(element.getText());
+            }
         });
         pack();
         setLocationRelativeTo(null);

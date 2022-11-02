@@ -17,10 +17,9 @@ public class LogicFeatures extends JFrame {
         return buttonList;
     }
 
-    public ArrayList<JButton> demoList(ArrayList<JButton> buttonList) {
-        buttonList.get(15).setText("");
-        buttonList.get(16).setText("15");
-        return buttonList;
+    public void demoList(ArrayList<JButton> buttonList) {
+        buttonList.get(14).setText("");
+        buttonList.get(15).setText("15");
     }
 
     public void scrambledButtonList(ArrayList<JButton> buttonList) {
