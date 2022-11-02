@@ -35,6 +35,7 @@ public class MoveButton extends JFrame {
         if (lf.isWin(currentOrderOfButtons)) {
             JOptionPane.showMessageDialog(null, "Grattis, du VANN!!!");
         }
+
         return currentOrderOfButtons;
     }
 
