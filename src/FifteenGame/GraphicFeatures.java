@@ -51,34 +51,10 @@ public class GraphicFeatures extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
-        System.out.print("first ");
-        currentOrderOfButtons.forEach(a -> System.out.print(a.getText()+" "));
-        System.out.println();
-
         mb.moveButton(currentOrderOfButtons, (JButton) e.getSource(), gamePanel);
-
-        System.out.print("middle ");
-        currentOrderOfButtons.forEach(a -> System.out.print(a.getText()+" "));
-        System.out.println();
-
-        /*
-        JButton bEmpty = (JButton) gamePanel.getComponent(mb.emptyIndex);
-        JButton bSwap = (JButton) gamePanel.getComponent(mb.buttonIndex);
-        String emptyText = bEmpty.getText();
-        String swapText = bSwap.getText();
-        bEmpty.setText(swapText);
-        bSwap.setText(emptyText);
-        //Collections.swap(currentOrderOfButtons, mb.buttonIndex, mb.emptyIndex);
-         */
 
         revalidate();
         repaint();
-
-        System.out.print("last ");
-        currentOrderOfButtons.forEach(a -> System.out.print(a.getText()+" "));
-        System.out.println();
-
     }
 
     public JPanel buttonPanel(JPanel buttonPanel, ArrayList<JButton> listToBeAdded){
