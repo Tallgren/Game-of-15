@@ -25,15 +25,16 @@ public class LogicFeatures extends JFrame {
     public void scrambledButtonList(ArrayList<JButton> buttonList) {
         Collections.shuffle(buttonList);
     }
+
     public boolean isWin(ArrayList<JButton> orderOfButtons) {
         int controller = 1;
-        for (int i = 0; i < orderOfButtons.size()-1; i++) {
+        for (int i = 0; i < orderOfButtons.size() - 1; i++) {
             if (orderOfButtons.get(i).getText().equals("")) {
                 break;
             } else if (controller == Integer.parseInt(orderOfButtons.get(i).getText())) {
-                    controller++;
-                }
+                controller++;
             }
+        }
         if (controller == 16) {
             return true;
         } else {

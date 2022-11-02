@@ -56,8 +56,8 @@ public class GraphicFeatures extends JFrame implements ActionListener {
         repaint();
     }
 
-    public JPanel buttonPanel(JPanel buttonPanel, ArrayList<JButton> listToBeAdded){
-        for (JButton element: listToBeAdded) {
+    public JPanel buttonPanel(JPanel buttonPanel, ArrayList<JButton> listToBeAdded) {
+        for (JButton element : listToBeAdded) {
             element.addActionListener(this);
             buttonPanel.add(element);
         }
