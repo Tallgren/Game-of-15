@@ -13,7 +13,6 @@ public class GraphicFeatures extends JFrame implements ActionListener {
     JPanel headPanel = new JPanel();
     JPanel panelForButtons = new JPanel();
 
-    JLabel winnerLabel = new JLabel("Grattis, du VANN!!!");
     ArrayList<JButton> currentOrderOfButtons = lf.buttonList();
     JPanel gamePanel = buttonPanel(panelForButtons, currentOrderOfButtons);
     JButton newGame = new JButton("Nytt Spel");

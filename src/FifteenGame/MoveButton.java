@@ -9,6 +9,7 @@ public class MoveButton extends JFrame{
     public int buttonIndex = 0;
     public int emptyIndex = 0;
 
+    LogicFeatures lf = new LogicFeatures();
 
     public ArrayList<JButton> moveButton(ArrayList<JButton> currentOrderOfButtons, JButton button, JPanel gamePanel){
 
@@ -33,13 +34,12 @@ public class MoveButton extends JFrame{
             SwapButtons(gamePanel, currentOrderOfButtons);
         }
 
-        return currentOrderOfButtons;
-/*
         if (lf.isWin(currentOrderOfButtons)){
-            headPanel.add(winnerLabel);
+            JOptionPane.showMessageDialog(null, "Grattis, du VANN!!!");
         }
- */
+        return currentOrderOfButtons;
     }
+
     public void SwapButtons(JPanel gamePanel, ArrayList<JButton> currentOrderOfButtons) {
         JButton bEmpty = (JButton) gamePanel.getComponent(emptyIndex);
         JButton bSwap = (JButton) gamePanel.getComponent(buttonIndex);
@@ -49,4 +49,6 @@ public class MoveButton extends JFrame{
         bSwap.setText(emptyText);
         Collections.swap(currentOrderOfButtons, buttonIndex, emptyIndex);
     }
+
+
 }
