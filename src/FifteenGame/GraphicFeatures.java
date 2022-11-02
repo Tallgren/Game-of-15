@@ -12,7 +12,6 @@ public class GraphicFeatures extends JFrame implements ActionListener {
     MoveButton mb = new MoveButton();
     JPanel headPanel = new JPanel();
     JPanel panelForButtons = new JPanel();
-
     ArrayList<JButton> currentOrderOfButtons = lf.buttonList();
     JPanel gamePanel = buttonPanel(panelForButtons, currentOrderOfButtons);
     JButton newGame = new JButton("Nytt Spel");
@@ -47,6 +46,13 @@ public class GraphicFeatures extends JFrame implements ActionListener {
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
+    public JPanel buttonPanel(JPanel buttonPanel, ArrayList<JButton> listToBeAdded) {
+        for (JButton element : listToBeAdded) {
+            element.addActionListener(this);
+            buttonPanel.add(element);
+        }
+        return buttonPanel;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -56,11 +62,4 @@ public class GraphicFeatures extends JFrame implements ActionListener {
         repaint();
     }
 
-    public JPanel buttonPanel(JPanel buttonPanel, ArrayList<JButton> listToBeAdded) {
-        for (JButton element : listToBeAdded) {
-            element.addActionListener(this);
-            buttonPanel.add(element);
-        }
-        return buttonPanel;
-    }
 }
