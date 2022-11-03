@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class GraphicFeatures extends JFrame implements ActionListener {
+public class GraphicFeatures extends JFrame implements ActionListener { //Tobias
 
     LogicFeatures lf = new LogicFeatures();
     MoveButton mb = new MoveButton();
@@ -61,5 +61,4 @@ public class GraphicFeatures extends JFrame implements ActionListener {
         revalidate();
         repaint();
     }
-
 }

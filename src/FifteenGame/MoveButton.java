@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MoveButton extends JFrame {
+public class MoveButton extends JFrame { //Tobias
 
     public int buttonIndex = 0;
     public int emptyIndex = 0;

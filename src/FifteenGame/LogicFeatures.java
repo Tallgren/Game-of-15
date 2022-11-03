@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class LogicFeatures extends JFrame {
+public class LogicFeatures extends JFrame { //Lemonia
 
     public ArrayList<JButton> buttonList() {
         ArrayList<JButton> buttonList = new ArrayList<>();
